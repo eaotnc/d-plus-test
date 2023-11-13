@@ -1,3 +1,7 @@
+// author Mr.Thanatcha Pitithadakul
+// email thanatcha.eao@gmail.com
+// choose test number 2 calculation rectagles area
+
 function removeInside(arr) {
   const rectangles = new Array(...arr);
   let result = [];
@@ -68,6 +72,7 @@ function calculate(rectanglesList) {
     return a[0] - b[0] || a[1] - b[1] || a[2] - b[2] || a[3] - b[3];
   });
 
+  // calculate area
   for (let i = 0; i < pureRectangles.length; i++) {
     const rect = pureRectangles[i];
     totalArea += (rect[2] - rect[0]) * (rect[3] - rect[1]);
