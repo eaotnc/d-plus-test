@@ -8,6 +8,7 @@ function removeInside(arr) {
     for (let j = 0; j < rectangles.length; j++) {
       if (i !== j) {
         if (
+          //  Check if rectangle i is inside rectangle j
           rectangles[i][0] >= rectangles[j][0] &&
           rectangles[i][1] >= rectangles[j][1] &&
           rectangles[i][2] <= rectangles[j][2] &&
@@ -28,15 +29,20 @@ function removeInside(arr) {
 }
 
 function uniqueArr(arr) {
+  // Use a Set to keep track of unique arrays
   const uniqueArrays = new Set();
+
   const uniqueArr = arr.filter((item) => {
     const strRepresentation = JSON.stringify(item);
+    // If the string representation is not in the Set, add it and return true
     if (!uniqueArrays.has(strRepresentation)) {
       uniqueArrays.add(strRepresentation);
       return true;
     }
+    // If the string representation is in the Set, return false
     return false;
   });
+
   return uniqueArr;
 }
 
@@ -75,9 +81,10 @@ function calculate(rectanglesList) {
 }
 
 function test(obj) {
-  const result = calculate(obj.input);
-  console.log(obj.index + ": ", result === obj.output);
-  console.log("🚀 ~ result:", result);
+  console.log(
+    obj.index + ": ",
+    JSON.stringify(calculate(obj.input)) === JSON.stringify(obj.output)
+  );
 }
 test({
   index: 1,
