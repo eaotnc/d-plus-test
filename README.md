@@ -1,3 +1,3 @@
 # d-plus-test
 
-เลือก ทำข้อสองครับ
+choose the question number 2 calculating rectacgle area
